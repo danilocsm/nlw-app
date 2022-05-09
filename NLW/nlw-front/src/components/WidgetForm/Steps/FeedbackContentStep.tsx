@@ -20,7 +20,7 @@ export function FeedbackContentStep({
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
   const [screenshot, setScreenshot] = useState<string | null>(null);
-  const [comment, setComment] = useState<string | null>("");
+  const [comment, setComment] = useState('');
   const [isSendingFeedback, setIsSendingFeedback] = useState<boolean>(false);
 
   async function handleSubmitFeedback(event: FormEvent) {

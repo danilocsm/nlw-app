@@ -1,4 +1,3 @@
-import { Popover } from "@headlessui/react";
 import { useState } from "react";
 
 export function Navbar() {

@@ -5,6 +5,17 @@ import { SubmitFeedbackUseCase } from "./use-cases/submit-feedback-use-case";
 
 export const router = express.Router();
 
+router.get("/feedbacks/all", async (req, res) => {
+  const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
+  try {
+    const feedbacks = await prismaFeedbacksRepository.getAll();
+    return res.status(200).json(feedbacks);
+  }catch (err) {
+    return res.status(500).json();
+  }
+
+});
+
 router.post("/feedbacks", async (req, res) => {
   const { type, comment, screenshot } = req.body;
 

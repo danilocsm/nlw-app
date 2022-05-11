@@ -7,5 +7,5 @@
 }
 
 body {
-	@apply bg-[#090909] text-zinc-100
+	@apply dark:bg-[#090909] dark:text-zinc-100 bg-zinc-400 
 }

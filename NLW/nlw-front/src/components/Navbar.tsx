@@ -1,22 +1,17 @@
 import { useState } from "react";
+import { api } from "../lib/api";
 
-export function Navbar() {
-  const [isWhiteTheme, setIsWhiteTheme] = useState(false);
+export interface NavbarProps {
+  onShowFeedbacksClicked: () => void;
+  onSwitchThemeClicked: () => void;
+  whiteThemeOn: boolean;
+}
 
-  const handleThemeChange = () => {
-    if (isWhiteTheme) {
-      setIsWhiteTheme(false);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsWhiteTheme(true);
-      document.documentElement.classList.remove("dark");
-    }
-  };
-
-  const handleFeedbacksRequest = () => {
-    alert("Here are ur feedbacks");
-  };
-
+export function Navbar({
+  onShowFeedbacksClicked,
+  onSwitchThemeClicked,
+  whiteThemeOn,
+}: NavbarProps) {
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-zinc-800 transition ease-in-out duration-150">
       <div className="container flex flex-wrap justify-end items-center mx-auto ">
@@ -25,17 +20,17 @@ export function Navbar() {
             <li>
               <button
                 className="h-12 w-15 p-2 rounded-full text-center bg-zinc-300 dark:bg-black text-blue-400 dark:text-white transition ease-in-out duration-150"
-                onClick={handleThemeChange}
+                onClick={() => onSwitchThemeClicked()}
               >
-                {isWhiteTheme ? "Tema Escuro" : "Tema Branco"}
+                {whiteThemeOn ? "Tema Escuro" : "Tema Branco"}
               </button>
             </li>
             <li className="p-2 dark:text-white text-blue-400">
               <button
                 className="h-12 w-15 p-2 rounded-full text-center bg-zinc-300 dark:bg-black text-blue-400 dark:text-white transition ease-in-out duration-150"
-                onClick={handleFeedbacksRequest}
+                onClick={() => onShowFeedbacksClicked()}
               >
-                Get feedbacks
+                Show feedbacks
               </button>
             </li>
           </ul>

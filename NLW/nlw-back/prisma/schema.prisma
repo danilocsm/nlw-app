@@ -16,7 +16,7 @@ model Feedback {
 
   type       String
   comment    String
-  screenshot String?
+  screenshot String? // campo não obrigatório
 
   @@map("feedbacks")
 }

@@ -4,7 +4,7 @@ import { FeedbacksRepository } from "../repositories/feedbacks.repository";
 interface SubmitFeedbackUseCaseRequest {
   type: string;
   comment: string;
-  screenshot?: string;
+  screenshot?: string; // o parametro é opcional
 }
 
 export class SubmitFeedbackUseCase {

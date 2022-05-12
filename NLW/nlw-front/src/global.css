@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 .button {
-	@apply bg-blue-400 px-4 h-10 rounded text-black
+  @apply bg-blue-400 px-4 h-10 rounded text-black;
 }
 
 body {
-	@apply dark:bg-[#090909] dark:text-zinc-100 bg-zinc-400 
+  @apply dark:bg-[#090909] dark:text-zinc-100 bg-zinc-500;
+  @apply scrollbar scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin;
 }

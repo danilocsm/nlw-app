@@ -41,7 +41,7 @@ export function FeedbacksContainer({
                 return (
                   <div
                     style={{
-                      transition: "all .1s",
+                      transition: "all .2s",
                       opacity: 0,
                       display: "none",
                       ...transitions[state]

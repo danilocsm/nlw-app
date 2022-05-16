@@ -27,12 +27,17 @@ export function FeedbackContentStep({
     event.preventDefault();
 
     setIsSendingFeedback(true);
-    await api.post("/feedbacks", {
-      type: feedbackType,
-      comment,
-      screenshot,
-    });
-    setIsSendingFeedback(false);
+    try{
+      await api.post("/feedbacks", {
+        type: feedbackType,
+        comment,
+        screenshot,
+      });
+    }catch (error) {
+      console.log(error);
+    }finally {
+      setIsSendingFeedback(false);
+    }
     onFeedbackSent();
   }
 

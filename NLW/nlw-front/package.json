@@ -9,12 +9,15 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.0",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "flowbite": "^1.4.5",
     "html2canvas": "^1.4.1",
     "phosphor-react": "^1.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {

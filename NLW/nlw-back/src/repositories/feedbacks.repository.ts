@@ -1,4 +1,3 @@
-
 export interface FeedbackCreateData {
   type: string;
   comment: string;

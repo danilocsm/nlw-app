@@ -9,6 +9,7 @@ router.get("/feedbacks/all", async (req, res) => {
   const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
   try {
     const feedbacks = await prismaFeedbacksRepository.getAll();
+    console.log(typeof feedbacks)
     return res.status(200).json(feedbacks);
   }catch (err) {
     return res.status(500).json();
